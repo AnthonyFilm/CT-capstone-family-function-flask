@@ -18,7 +18,7 @@ class Config():
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_NOTIFICAITONS = False
 
-    REDIS_URI = os.environ.get("REDIS_URI")
+    REDIS_URI = os.environ.get("SESSION_REDIS")
     SESSION_TYPE = "redis"
     print(REDIS_URI)
     SESSION_REDIS = redis.from_url(REDIS_URI)
