@@ -55,8 +55,9 @@ def signin():
             print(email)
 
             logged_user = User.query.filter(User.email == email).first()
-            print(f'this is the name of the logged in user {logged_user.id}')
+          
             if logged_user and check_password_hash(logged_user.password, password):
+                  print(f'got past the if')
                 login_user(logged_user)
                 session["user_id"] = logged_user.id
                 user_id = session.get("user_id")
