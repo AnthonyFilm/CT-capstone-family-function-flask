@@ -18,10 +18,10 @@ class Config():
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_NOTIFICAITONS = False
 
-    REDIS_URI = os.environ.get("SESSION_REDIS")
+    REDIS_URI = os.environ.get("REDIS_URI")
     SESSION_TYPE = "redis"
     print(REDIS_URI)
-    SESSION_REDIS = redis.from_url(REDIS_URI)
+    SESSION_REDIS = redis.from_url(os.getenv("SESSION_REDIS"))
 
     DREAMOBJECTS_SECRET_KEY=os.getenv('DREAMOBJECTS_SECRET_KEY')
     DREAMOBJECTS_KEY = os.getenv('DREAMOBJECTS_KEY')
