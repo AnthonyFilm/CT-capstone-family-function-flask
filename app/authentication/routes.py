@@ -59,8 +59,9 @@ def signin():
             if logged_user and check_password_hash(logged_user.password, password):
 
                 login_user(logged_user)
-                print("got past login_user statement")
+                
                 session["user_id"] = logged_user.id
+                print("got past session user_id statement")
                 user_id = session.get("user_id")
                 
                 return f'{user_id}', 'auth-success'
