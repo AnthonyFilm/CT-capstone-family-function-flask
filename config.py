@@ -20,7 +20,7 @@ class Config():
 
     REDIS_URI = os.environ.get("REDIS_URI")
     SESSION_TYPE = "redis"
-    print(REDIS_URI)
+    print(f' this is the redis uri variable {REDIS_URI}')
     SESSION_REDIS = redis.from_url(os.environ.get("SESSION_REDIS"))
 
     DREAMOBJECTS_SECRET_KEY=os.getenv('DREAMOBJECTS_SECRET_KEY')

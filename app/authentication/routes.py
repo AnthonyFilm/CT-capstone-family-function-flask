@@ -63,7 +63,7 @@ def signin():
                 session["user_id"] = logged_user.id
                 
                 user_id = session.get("user_id")
-                print("got past sessiong get user_id statement")
+                print("this is the user id", user_id)
                 return f'{user_id}', 'auth-success'
             else:
                 return jsonify({'message': 'There is a problem with your login information.'}), 401
