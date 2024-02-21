@@ -73,7 +73,7 @@ def signin():
                 return jsonify({'message': 'There is a problem with your login information.'}), 401
     except:
         return jsonify({'message': 'There is a problem with your login information.'}), 401
-    return signin    
+    return "something went wrong with the login process. Please try again."    
 
 #  API route to verify login for React client
 
