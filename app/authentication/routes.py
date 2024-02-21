@@ -68,10 +68,11 @@ def signin():
                 
                 user_id = session.get("user_id")
                 print("this is the user id", user_id)
-                return user_id, 'auth-success'
+                return jsonify({'user_id': user_id, 'message': 'auth-success'})
             else:
                 return jsonify({'message': 'There is a problem with your login information.'}), 401
-    except:
+    except Exception as e:
+        print(e)
         return jsonify({'message': 'There is a problem with your login information.'}), 401
     return "something went wrong with the login process. Please try again."    
 
