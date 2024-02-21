@@ -9,6 +9,10 @@ from flask_login import login_user, logout_user, LoginManager, current_user, log
 
 auth = Blueprint('auth', __name__, template_folder='auth_templates')
 
+@auth.route('/')
+def home():
+    return "The API server for Family Function has sucessfully started!"
+
 
 @auth.route('/signup', methods = ['GET', 'POST'])
 def signup():
